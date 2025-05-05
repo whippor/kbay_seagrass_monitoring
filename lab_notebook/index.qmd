@@ -7,4 +7,4 @@ format: html
 
 This is the lab notebook for **kbay_seagrass_monitoring**.
 
-- [Return to Central Lab Hub](../../lab_notebook_hub/index.qmd)
+-   [Return to Central Lab Hub](../../lab_notebook_hub/index.qmd)
