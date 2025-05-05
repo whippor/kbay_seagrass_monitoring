@@ -1,0 +1,15 @@
+project:
+  type: website
+
+website:
+  title: "kbay_seagrass_monitoring Lab Notebook"
+  navbar:
+    left:
+      - file: index.qmd
+      - file: entries/
+
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true

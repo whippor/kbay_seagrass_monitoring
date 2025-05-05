@@ -1,0 +1,9 @@
+---
+title: "Initial Entry"
+date: 2025-05-04
+format: html
+---
+
+This is a sample notebook entry for kbay_seagrass_monitoring.
+
+Include any field notes, figures, datasets, or analysis here.

@@ -1,0 +1,10 @@
+---
+title: "kbay_seagrass_monitoring Lab Notebook"
+format: html
+---
+
+# 📘 kbay_seagrass_monitoring
+
+This is the lab notebook for **kbay_seagrass_monitoring**.
+
+- [Return to Central Lab Hub](../../lab_notebook_hub/index.qmd)
