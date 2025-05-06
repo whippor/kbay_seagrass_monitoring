@@ -15,7 +15,7 @@ pin_local_dataset <- function(filepath) {
     pinned = dest,
     sha = sha
   )
-  log_path <- "log/data_reference_log.csv"
+  log_path <- "../lab_notebook_hub/log/data_reference_log.csv"
   if (file.exists(log_path)) {
     log <- read_csv(log_path)
     log <- bind_rows(log, log_entry)
