@@ -3,8 +3,27 @@ title: "kbay_seagrass_monitoring Lab Notebook"
 format: html
 ---
 
+```{r}
+#| echo = FALSE
+#| include = FALSE
+
+library(tidyverse)
+```
+
 # 📘 kbay_seagrass_monitoring
 
 This is the lab notebook for **kbay_seagrass_monitoring**.
 
 -   [Return to Central Lab Hub](../../lab_notebook_hub/index.qmd)
+
+### Entry Log
+
+```{r}
+#| echo = FALSE
+
+log <- read_csv("~/git/kbay_seagrass_monitoring/lab_notebook/log/data_reference_log.csv")
+log <- log %>%
+  drop_na(entry) %>%
+  select(date, entry, description)
+log
+```

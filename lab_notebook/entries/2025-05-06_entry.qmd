@@ -1,0 +1,62 @@
+---
+title: "Initial Survey Planning"
+date: 2025-05-06
+format: html
+---
+
+## Summary
+
+Planning for initial seagrass surveys in Mud Bay including sampling methods, datasheets, and timing.
+
+## Methods
+
+Takeaways from my conversation with Katrin Iken last weekend resulted in the following:
+
+-   Bi-weekly surveys in Mud Bay
+
+-   Three transects spaced 500m-2km apart
+
+-   Measure shoot density and cover
+
+-   Qualitative and quantitative data collection
+
+### Transect Locations
+
+| transect | start_lat | start_lon  | end_lat  | end_lon    |
+|----------|-----------|------------|----------|------------|
+| MB01     | 59.63743  | -151.49870 | 59.62949 | -151.47694 |
+| MB02     | 59.63997  | -151.47462 | 59.63464 | -151.46412 |
+| MB03     | 59.64449  | -151.45747 | 59.63939 | -151.44862 |
+
+: Locations of initial seagrass transects for Mud Bay survey pilot.
+
+These transects are spaced 1 km apart and run roughly perpendicular to shore. They might be able to be sampled over a single day, but that is daylight, weather, and tide dependent.
+
+### Data Collection
+
+Data on seagrass density, length, and supplementary qualitative measures will be taken along each of the three transect.
+
++-----------------------+----------------------------------------------+--------------------------------------------------------------------------------------+
+| parameter             | unit                                         | notes                                                                                |
++=======================+==============================================+======================================================================================+
+| seagrass density      | shoots per 0.5 m^2^                          | taken with quadrat every 50 m along the transect line                                |
++-----------------------+----------------------------------------------+--------------------------------------------------------------------------------------+
+| seagrass length       | cm of longest blade                          | five haphazard shoots, one from each corner of quadrat and one from center           |
++-----------------------+----------------------------------------------+--------------------------------------------------------------------------------------+
+| qualitative density   | ordinal measures of density\                 | taken every 10 m along the transect line                                             |
+|                       | (none, trace, sparse, thin, moderate, thick) |                                                                                      |
++-----------------------+----------------------------------------------+--------------------------------------------------------------------------------------+
+| notes                 | text                                         | any noteworthy items                                                                 |
++-----------------------+----------------------------------------------+--------------------------------------------------------------------------------------+
+| metadata              | various for each data entry                  | to include: date, time, transect, quadrat, meter location (along transect), lat, lon |
++-----------------------+----------------------------------------------+--------------------------------------------------------------------------------------+
+
+: Parameters of interest for seagrass surveys.
+
+### Frequency
+
+Every two weeks during spring tide lows.
+
+## Notes
+
+This could potentially be done as an intern project for summer or SBB interns.

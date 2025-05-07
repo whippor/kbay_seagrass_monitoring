@@ -1,9 +1,10 @@
-date,original,pinned,sha
-2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA
-2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA
-2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA
-2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA
-2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA
-2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,1e65acbadce27469869164514d8f1814f2beb880
-2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,1e65acbadce27469869164514d8f1814f2beb880
-2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,1e65acbadce27469869164514d8f1814f2beb880
+date,original,pinned,sha,entry,description
+2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA,NA,NA
+2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA,NA,NA
+2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA,NA,NA
+2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA,NA,NA
+2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,NA,NA,NA
+2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,1e65acbadce27469869164514d8f1814f2beb880,NA,NA
+2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,1e65acbadce27469869164514d8f1814f2beb880,NA,NA
+2025-05-05,../../data/seagrass_data.csv,data/2025-05-05_seagrass_data.csv,1e65acbadce27469869164514d8f1814f2beb880,NA,NA
+2025-05-06,NA,NA,NA,2025-05-06_entry.qmd,Initial Survey Planning
