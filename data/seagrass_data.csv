@@ -448,4 +448,61 @@ date,transect,quadrat,timeBegin,timeEnd,lat,lon,shoots,shootID,shootLength,shoot
 6/18/2025,MBX,NA,1330,1530,59.627893,-151.462003,NA,NA,NA,NA,1,sparse,NA,Whippo,
 6/18/2025,MBX,NA,1330,1530,59.627114,-151.462411,NA,NA,NA,NA,1,trace,NA,Whippo,
 6/18/2025,MBX,NA,1330,1530,59.625546,-151.462935,NA,NA,NA,NA,1,trace,NA,Whippo,
-6/18/2025,MBX,NA,1330,1530,59.625467,-151.46296,NA,NA,NA,NA,1,none,NA,Whippo,
+6/18/2025,MBX,NA,1330,1530,59.625467,-151.46296,0,NA,NA,NA,1,none,NA,Whippo,
+7/15/2025,MBX,NA,1205,1330,59.609759,-151.428052,NA,NA,NA,NA,1,sparse,NA,Whippo,
+7/15/2025,MBX,NA,1205,1330,59.609905,-151.428391,NA,NA,NA,NA,1,moderate,NA,Whippo,
+7/15/2025,MBX,NA,1205,1330,59.610123,-151.428758,NA,NA,NA,NA,1,thin,NA,Whippo,
+7/15/2025,MBX,NA,1205,1330,59.610241,-151.42926,0,NA,NA,NA,1,none,NA,Whippo,
+7/15/2025,MBX,NA,1205,1330,59.610161,-151.430232,NA,NA,NA,NA,1,sparse,NA,Whippo,
+7/15/2025,MBX,NA,1205,1330,59.609897,-151.43055,206,1,80,0.5,1,thick,mud,Whippo,reproductives w/o seeds
+7/15/2025,MBX,NA,1205,1330,59.609897,-151.43055,206,2,89,0.5,NA,thick,mud,Whippo,reproductives w/o seeds
+7/15/2025,MBX,NA,1205,1330,59.609897,-151.43055,206,3,72,0.4,NA,thick,mud,Whippo,reproductives w/o seeds
+7/15/2025,MBX,NA,1205,1330,59.609897,-151.43055,206,4,110,0.5,NA,thick,mud,Whippo,reproductives w/o seeds
+7/15/2025,MBX,NA,1205,1330,59.609897,-151.43055,206,5,97,0.4,NA,thick,mud,Whippo,reproductives w/o seeds
+7/15/2025,MBX,NA,1205,1330,59.609442,-151.431126,116,1,57,0.4,1,thick,mud,Whippo,"reproductives w/o seeds, wasting?"
+7/15/2025,MBX,NA,1205,1330,59.609442,-151.431126,116,2,74,0.5,NA,thick,mud,Whippo,"reproductives w/o seeds, wasting?"
+7/15/2025,MBX,NA,1205,1330,59.609442,-151.431126,116,3,45,0.4,NA,thick,mud,Whippo,"reproductives w/o seeds, wasting?"
+7/15/2025,MBX,NA,1205,1330,59.609442,-151.431126,116,4,66,0.4,NA,thick,mud,Whippo,"reproductives w/o seeds, wasting?"
+7/15/2025,MBX,NA,1205,1330,59.609442,-151.431126,116,5,52,0.3,NA,thick,mud,Whippo,"reproductives w/o seeds, wasting?"
+7/24/2025,MBX,NA,930,1000,59.607101,-151.420151,NA,NA,NA,NA,1,moderate,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.607356,-151.420556,NA,NA,NA,NA,1,thick,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.607587,-151.42094,NA,NA,NA,NA,1,thick,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.607808,-151.421467,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.607985,-151.421947,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.608187,-151.422509,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.60835,-151.423024,NA,NA,NA,NA,1,thin,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.608509,-151.423542,NA,NA,NA,NA,1,moderate,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.608703,-151.424115,NA,NA,NA,NA,1,moderate,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.608892,-151.424656,NA,NA,NA,NA,1,moderate,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.609082,-151.425236,NA,NA,NA,NA,1,sparse,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.609247,-151.425856,NA,NA,NA,NA,1,thin,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.609426,-151.426469,NA,NA,NA,NA,1,sparse,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.609574,-151.426996,NA,NA,NA,NA,1,thin,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.609734,-151.427516,NA,NA,NA,NA,1,thin,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.609873,-151.428071,NA,NA,NA,NA,1,trace,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.610137,-151.428661,NA,NA,NA,NA,1,thick,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.610279,-151.429183,NA,NA,NA,NA,1,trace,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.610502,-151.429814,NA,NA,NA,NA,1,trace,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.610655,-151.430298,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.610817,-151.430993,NA,NA,NA,NA,1,trace,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.61096,-151.431606,NA,NA,NA,NA,1,trace,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.611181,-151.432112,NA,NA,NA,NA,1,trace,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.611407,-151.432512,NA,NA,NA,NA,1,trace,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.611623,-151.433079,NA,NA,NA,NA,1,sparse,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.611871,-151.433609,NA,NA,NA,NA,1,sparse,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.612094,-151.434057,NA,NA,NA,NA,1,thin,NA,Whippo,seagrass wrack present
+7/24/2025,MB08,NA,930,1000,59.612305,-151.434564,NA,NA,NA,NA,1,moderate,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.61256,-151.434287,NA,NA,NA,NA,1,thick,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.612544,-151.434044,NA,NA,NA,NA,1,moderate,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.612404,-151.433669,NA,NA,NA,NA,1,thin,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.611991,-151.434504,NA,NA,NA,NA,1,moderate,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.611796,-151.434993,NA,NA,NA,NA,1,sparse,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.61154,-151.435695,NA,NA,NA,NA,1,thin,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.611262,-151.436186,NA,NA,NA,NA,1,sparse,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.611188,-151.43632,NA,NA,NA,NA,1,thick,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.611043,-151.436501,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.610949,-151.436726,NA,NA,NA,NA,1,thick,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.61077,-151.437098,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.610761,-151.437377,NA,NA,NA,NA,1,thin,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.61039,-151.436877,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present
+7/24/2025,MBX,NA,930,1000,59.609796,-151.435885,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present

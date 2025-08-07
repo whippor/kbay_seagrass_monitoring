@@ -4,7 +4,7 @@
 # Script created 2025-06-04                                                   ##
 # Data source: NOAA-NCCOS-KBL                                                 ##
 # R code prepared by Ross Whippo                                              ##
-# Last updated 2025-06-04                                                     ##
+# Last updated 2025-07-15                                                     ##
 #                                                                             ##
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -110,7 +110,7 @@ interpolate_quadrats_with_measured <- function(df_group) {
 # READ IN AND PREPARE DATA                                                  ####
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# read in seagrass data
+# read in seagrass data table
 seagrass_raw <- read_csv("data/seagrass_data.csv", 
                          col_types = cols(date = col_date(format = "%m/%d/%Y"), 
                                           timeBegin = col_time(format = "%H%M"), 
@@ -139,6 +139,7 @@ interp_vect$densityValue <- factor(interp_vect$densityValue, levels = c("thick",
 
 
 crdref <- "+proj=longlat +datum=WGS84"
+interpcrs <- crs(interp_vect)
 
 # export density values as df
 interp_latlon <- project(interp_vect, crdref)
@@ -152,6 +153,14 @@ interp_df <- interp_df |>
 
 write_csv(interp_df, "data/seagrass_density.csv")
 
+# import west mud bay meadow polygon
+meadow_lines <- vect("data/Seagrasspathpolygon.kml")
+meadow_poly <- as.polygons(meadow_lines)
+meadow_poly <- project(meadow_poly, interpcrs)
+expanse(meadow_poly)
+
+plot(interp_dense)
+plot(meadow_poly, add = TRUE)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # VISUALIZE PLOTS                                                           ####
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -170,7 +179,7 @@ plet(interp_vect, "densityValue",col=viridis(6, option = "mako"))
 
 interp_df |>
   ggplot() +
-  geom_point(aes(x = x, y = y, color = density))
+  geom_point(aes(x = lon, y = lat, color = qual_dens))
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # INTERPOLATE DENSITY                                                       ####
@@ -299,11 +308,13 @@ plot(test)
 
 
 
+polyseagrass <- vect("C:/Users/Ross.Whippo/Desktop/Seagrasspathpolygon.kml")
+expanse(polyseagrass)
+mudbay <- project(mudbay, "epsg:3338")
 
 
 
-
-
+polyseagrass
 
 
 
