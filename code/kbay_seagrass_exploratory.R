@@ -172,14 +172,15 @@ plot(interp_vect, "densityValue", col=viridis(6, option = "mako"), sort = c("thi
                                                                             "sparse",
                                                                             "trace",
                                                                             "none"),
-     plg=list(x="topright", title="Density", bty = "o"), main="", axes=FALSE)
+     plg=list(x="topright", title="Cover", bty = "o"), main="", axes=FALSE)
 
 # plot with leaflet map
 plet(interp_vect, "densityValue",col=viridis(6, option = "mako"))
 
 interp_df |>
   ggplot() +
-  geom_point(aes(x = lon, y = lat, color = qual_dens))
+  geom_point(aes(x = lon, y = lat, color = qual_dens)) +
+  scale_color_brewer(direction = -1, palette = 2)
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # INTERPOLATE DENSITY                                                       ####
@@ -342,3 +343,5 @@ inv_dist <- 1 / (dist_ras + 1e-6)  # add small number to avoid divide-by-zero
 
 interp <- interpolate(r_template, interp_vect, "ordinal", method = "idw", idp = 2)
 
+
+writeVector(interp_vect, "C:/Users/Ross.Whippo/Desktop/seagrass.kml", filetype = "KML")

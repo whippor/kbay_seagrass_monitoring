@@ -506,3 +506,42 @@ date,transect,quadrat,timeBegin,timeEnd,lat,lon,shoots,shootID,shootLength,shoot
 7/24/2025,MBX,NA,930,1000,59.610761,-151.437377,NA,NA,NA,NA,1,thin,NA,Whippo,seagrass wrack present
 7/24/2025,MBX,NA,930,1000,59.61039,-151.436877,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present
 7/24/2025,MBX,NA,930,1000,59.609796,-151.435885,NA,NA,NA,NA,1,none,NA,Whippo,seagrass wrack present
+8/26/2025,MBX,NA,1010,1140,59.62255,-151.456834,NA,NA,NA,NA,1,none,NA,Whippo,
+8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,1,trace,sand-mud,Whippo,senescent grass present
+8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,2,sparse,sand-mud,Whippo,senescent grass present
+8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,3,thick,sand-mud,Whippo,senescent grass present
+8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,4,thick,sand-mud,Whippo,senescent grass present
+8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,5,thick,sand-mud,Whippo,senescent grass present
+8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,6,thick,sand-mud,Whippo,senescent grass present
+8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,7,thick,sand-mud,Whippo,senescent grass present
+8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,8,thick,sand-mud,Whippo,senescent grass present
+8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,9,thick,sand-mud,Whippo,senescent grass present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,1,91,0.5,1,thick,mud,Whippo,reproductives present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,2,38,0.25,2,thick,mud,Whippo,reproductives present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,3,87,0.5,3,moderate,mud,Whippo,reproductives present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,4,88,0.4,4,thick,mud,Whippo,reproductives present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,5,85,0.4,5,thin,mud,Whippo,reproductives present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,NA,NA,NA,6,sparse,mud,Whippo,reproductives present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,NA,NA,NA,7,trace,mud,Whippo,reproductives present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,NA,NA,NA,8,sparse,mud,Whippo,reproductives present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,NA,NA,NA,9,sparse,mud,Whippo,reproductives present
+8/26/2025,MB09,3,1010,1140,59.63311,-151.446548,2,NA,NA,NA,1,trace,sand-hash,Whippo,senescent grass in quad
+8/26/2025,MBX,NA,1010,1140,59.633891,-151.446894,NA,NA,NA,NA,1,trace,NA,Whippo,senescent grass present
+8/26/2025,MBX,NA,1010,1140,59.634824,-151.4468,NA,NA,NA,NA,2,trace,NA,Whippo,senescent grass present
+8/26/2025,MBX,NA,1010,1140,59.635202,-151.447643,NA,NA,NA,NA,3,none,NA,Whippo,
+8/26/2025,MBX,NA,1010,1140,59.635375,-151.448496,NA,NA,NA,NA,4,thick,NA,Whippo,
+8/26/2025,MBX,NA,1010,1140,59.634884,-151.44951,NA,NA,NA,NA,5,moderate,NA,Whippo,
+8/26/2025,MBX,NA,1010,1140,59.634114,-151.449859,NA,NA,NA,NA,6,thick,NA,Whippo,
+8/26/2025,MBX,NA,1010,1140,59.633588,-151.450527,NA,NA,NA,NA,7,thick,NA,Whippo,some senescent
+8/26/2025,MBX,NA,1010,1140,59.632661,-151.45044,NA,NA,NA,NA,8,moderate,NA,Whippo,
+8/26/2025,MBX,NA,1010,1140,59.632156,-151.45152,NA,NA,NA,NA,9,thick,NA,Whippo,
+8/26/2025,MBX,NA,1010,1140,59.631192,-151.453199,NA,NA,NA,NA,10,moderate,NA,Whippo,
+8/26/2025,MBX,NA,1010,1140,59.630765,-151.454149,NA,NA,NA,NA,11,thick,NA,Whippo,
+8/26/2025,MBX,NA,1010,1140,59.62976,-151.455386,NA,NA,NA,NA,12,thick,NA,Whippo,
+8/26/2025,MBX,1,1010,1140,59.628591,-151.456761,102,1,122,0.4,1,thick,mud,Whippo,very thick seagrass
+8/26/2025,MBX,1,1010,1140,59.628591,-151.456761,102,2,110,0.4,NA,thick,mud,Whippo,very thick seagrass
+8/26/2025,MBX,1,1010,1140,59.628591,-151.456761,102,3,94,0.25,NA,thick,mud,Whippo,very thick seagrass
+8/26/2025,MBX,1,1010,1140,59.628591,-151.456761,102,4,123,0.6,NA,thick,mud,Whippo,very thick seagrass
+8/26/2025,MBX,1,1010,1140,59.628591,-151.456761,102,5,154,0.4,NA,thick,mud,Whippo,very thick seagrass
+8/26/2025,MBX,NA,1010,1140,59.627223,-151.459199,NA,NA,NA,NA,1,thick,NA,Whippo,
+8/26/2025,MBX,NA,1010,1140,59.625584,-151.46065,NA,NA,NA,NA,1,thin,NA,Whippo,senescent
