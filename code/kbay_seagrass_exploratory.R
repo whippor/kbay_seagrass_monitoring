@@ -34,6 +34,7 @@ library(viridis)
 library(terra)
 library(sf)
 library(basemaps)
+library(tidyterra)
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # GPS INTERPOLATION FUNCTION                                                ####
@@ -175,12 +176,16 @@ plot(interp_vect, "densityValue", col=viridis(6, option = "mako"), sort = c("thi
      plg=list(x="topright", title="Cover", bty = "o"), main="", axes=FALSE)
 
 # plot with leaflet map
-plet(interp_vect, "densityValue",col=viridis(6, option = "mako"))
+new_interp <- interp_vect |>
+  rename(QualitativeCover = densityValue)
+  
+plet(new_interp, "QualitativeCover",col=viridis(6, option = "mako",
+                                             begin = .6, end = 1)) 
 
 interp_df |>
   ggplot() +
   geom_point(aes(x = lon, y = lat, color = qual_dens)) +
-  scale_color_brewer(direction = -1, palette = 2)
+  scale_color_brewer(direction = -1, palette = 2) 
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # INTERPOLATE DENSITY                                                       ####
@@ -206,7 +211,7 @@ bath_mask <- mask(bath_mask, mudbay)
 # Alaska Tidal Datum Reference Table. 
 # Retrieved from 
 # https://dggs.alaska.gov/hazards/coastal/ak-tidal-datum-portal.html  
-bath_corr <- bath_mask + 1.573
+bath_corr <- bath_mask - 1.573
 bath_clamp <- clamp(bath_corr, lower = -6, upper = 3, values = FALSE)
 bath_clamp <- interpIDW(bath_clamp,
                         ROI,
@@ -262,7 +267,7 @@ plot(interp_vect, "densityValue", col=viridis(6, option = "viridis", begin = 1, 
      add = TRUE)
 
 
-adjusted <- bathymetry + 1.546
+adjusted <- bathymetry - 1.546
 test <- crop(adjusted, mudbay)
 plot(test)
 
@@ -273,9 +278,127 @@ plot(bath_clamp, add = TRUE)
 plot(interp_vect, add = TRUE)
 ############### SUBSECTION HERE
 ####
+
+
+
+
+
+
+
+
+
+
+
+
 #<<<<<<<<<<<<<<<<<<<<<<<<<<END OF SCRIPT>>>>>>>>>>>>>>>>>>>>>>>>#
 
 # SCRATCH PAD ####
+
+# test figs for SBB AMSS Poster
+
+
+## x = depth, y = density/cover 
+
+###combine datasets so depth and density are in the same df, reproject bath to 
+### get lat lon
+bath_dd <- project(bathymetry + 1.573, "EPSG:4326")
+
+### Extract raster values at data frame locations
+### The extract function will find the raster cell corresponding to each point
+### and return its value.
+extracted_values <- extract(bath_dd, interpolated_all[, c("lon", "lat")])
+seagrass_depths <- cbind(interpolated_all, depth = extracted_values[,2])
+
+seagrass_depths |>
+  mutate(densityNum = case_when(densityValue == "none" ~ 0,
+                                densityValue == "trace" ~ 1,
+                                densityValue == "sparse" ~ 10,
+                                densityValue == "thin" ~ 25,
+                                densityValue == "moderate" ~ 75,
+                                densityValue == "thick" ~ 100)) |> 
+ggplot() +
+  geom_jitter(aes(x = depth, y = densityNum, color = month(date, label = TRUE), shape = source),
+              width = 0, height = 5, size = 4, alpha = 0.75) +
+  theme_bw() +
+  scale_color_viridis_d() +
+  labs(x = "Depth (m)", 
+       y = "Maximum Cover (%)",
+       color = "Month",
+       shape = "GPS location") +
+  geom_smooth(aes(x = depth, y = densityNum),
+              method = "lm", se = FALSE) +
+  scale_y_continuous(limits = c(-5, 105))
+
+# x = density, y = reproductive
+# Add the reproductive binary column
+seagrass_depths |>
+  mutate(Reproductive = as.numeric(str_detect(notes, "reproductive"))) |>
+  mutate(densityNum = case_when(densityValue == "none" ~ 0,
+                                densityValue == "trace" ~ 1,
+                                densityValue == "sparse" ~ 10,
+                                densityValue == "thin" ~ 25,
+                                densityValue == "moderate" ~ 75,
+                                densityValue == "thick" ~ 100)) |>
+  left_join(seagrass_raw |>
+              select(notes))
+  #filter(densityNum > 0) |>
+  ggplot() +
+  geom_jitter(aes(x = densityNum, y = Reproductive, color = month(date, label = TRUE)), 
+              height = 0.05, width = 4, alpha = 0.75, size = 4) +
+  stat_smooth(aes(x = densityNum, y = Reproductive),
+              method = "glm", method.args = list(family = "binomial"), se = FALSE) +
+  labs(x = "Maximum Cover (%)", 
+       y = "Reproductive Plants Detected",
+       color = "Month",
+       shape = "GPS location") +
+  theme_bw()
+
+# reproductives by cover
+seagrass_raw |>
+  filter(densityID == 1) |>
+  mutate(Reproductive = as.numeric(str_detect(notes, "reproductive"))) |>
+  mutate(densityNum = case_when(densityValue == "none" ~ 0,
+                                densityValue == "trace" ~ 1,
+                                densityValue == "sparse" ~ 10,
+                                densityValue == "thin" ~ 25,
+                                densityValue == "moderate" ~ 75,
+                                densityValue == "thick" ~ 100)) |>
+  ggplot() +
+  geom_jitter(aes(x = densityNum, y = Reproductive, color = month(date, label = TRUE)), 
+              height = 0.05, width = 4, alpha = 0.75, size = 4) +
+  stat_smooth(aes(x = densityNum, y = Reproductive),
+              method = "glm", method.args = list(family = "binomial"), se = FALSE) +
+  labs(x = "Maximum Cover (%)", 
+       y = "Reproductive Plants Detected",
+       color = "Month",
+       shape = "GPS location") +
+  theme_bw()
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+# Create example data
+# Create example data
+df <- data.frame(
+  x = 1:20,
+  y = 2 * (1:20)^2 - 5 * (1:20) + 10 + rnorm(20, sd = 20)
+)
+
+# Create a scatter plot with a parabolic smooth line
+ggplot(df, aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE)
+
+
 
 
 # rasterize plots
@@ -345,3 +468,88 @@ interp <- interpolate(r_template, interp_vect, "ordinal", method = "idw", idp = 
 
 
 writeVector(interp_vect, "C:/Users/Ross.Whippo/Desktop/seagrass.kml", filetype = "KML")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Vectorized version
+mandelbrot_vectorized <- function(xmin=-2, xmax=2, nx=500,
+                                  ymin=-1.5, ymax=1.5, ny=500,
+                                  n=100, showplot=TRUE,
+                                  cols=colorRampPalette(c("blue","yellow","red","black"))(11)) 
+{
+  
+  # variables
+  x <- seq(xmin, xmax, length.out=nx)
+  y <- seq(ymin, ymax, length.out=ny)
+  c <- outer(x,y*1i,FUN="+")
+  z <- matrix(0.0, nrow=length(x), ncol=length(y))
+  k <- matrix(0.0, nrow=length(x), ncol=length(y))
+  
+  for (rep in 1:n) { 
+    index <- which(Mod(z) < 2)
+    z[index] <- z[index]^2 + c[index]
+    k[index] <- k[index] + 1
+  }
+  
+  if (showplot==TRUE) { image(x,y,k,col=cols, xlab="Re(c)", ylab="Im(c)")}
+  
+  return(k)
+  
+}
+mandelbrot_vectorized(n = 2000)
