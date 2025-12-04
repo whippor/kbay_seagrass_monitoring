@@ -1,0 +1,13 @@
+site_code,lat_start,lon_start,lat_end,lon_end,date,start_time,end_time,transect,quadrat,taxonID,length,scars,epibiont_empty,epibiont_drymass,blade_empty,blade_drymass,personnel,notes
+MudBay,59.613874,-151.439995,59.614271,-151.440548,9/23/2025,925,1100,1,1,Zmarina,134,absent,3.4778,3.475,3.3878,3.7112,Whippo | Jones | Fliearman,
+MudBay,59.613874,-151.439995,59.614271,-151.440548,9/23/2025,925,1100,1,3,Zmarina,112,absent,3.9737,3.976,3.8009,4.1333,Whippo | Jones | Fliearman,
+MudBay,59.613874,-151.439995,59.614271,-151.440548,9/23/2025,925,1100,1,5,Zmarina,162,absent,4.2271,4.2302,3.8203,4.1666,Whippo | Jones | Fliearman,
+MudBay,59.613874,-151.439995,59.614271,-151.440548,9/23/2025,925,1100,1,7,Zmarina,125,absent,4.2143,4.2429,3.718,4.1561,Whippo | Jones | Fliearman,
+MudBay,59.613941,-151.439675,59.614383,-151.440057,9/23/2025,925,1100,2,1,Zmarina,103,absent,3.8802,3.884,3.8523,4.0488,Whippo | Jones | Fliearman,
+MudBay,59.613941,-151.439675,59.614383,-151.440057,9/23/2025,925,1100,2,3,Zmarina,108,absent,3.7574,3.7596,3.6535,3.9201,Whippo | Jones | Fliearman,
+MudBay,59.613941,-151.439675,59.614383,-151.440057,9/23/2025,925,1100,2,5,Zmarina,106,absent,3.4515,3.4862,4.4164,4.6525,Whippo | Jones | Fliearman,
+MudBay,59.613941,-151.439675,59.614383,-151.440057,9/23/2025,925,1100,2,7,Zmarina,93,absent,3.542,3.5498,3.9668,4.3324,Whippo | Jones | Fliearman,
+MudBay,59.613877,-151.43987,59.614367,-151.440223,9/23/2025,925,1100,3,1,Zmarina,91,absent,3.7147,3.7553,3.7849,3.9438,Whippo | Jones | Fliearman,
+MudBay,59.613877,-151.43987,59.614367,-151.440223,9/23/2025,925,1100,3,3,Zmarina,110,absent,NA,NA,3.8877,4.1546,Whippo | Jones | Fliearman,
+MudBay,59.613877,-151.43987,59.614367,-151.440223,9/23/2025,925,1100,3,5,Zmarina,130,absent,4.0963,4.102,3.8031,4.2881,Whippo | Jones | Fliearman,
+MudBay,59.613877,-151.43987,59.614367,-151.440223,9/23/2025,925,1100,3,7,Zmarina,116,absent,3.6255,3.6285,4.6332,5.0101,Whippo | Jones | Fliearman,
