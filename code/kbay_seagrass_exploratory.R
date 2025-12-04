@@ -4,7 +4,7 @@
 # Script created 2025-06-04                                                   ##
 # Data source: NOAA-NCCOS-KBL                                                 ##
 # R code prepared by Ross Whippo                                              ##
-# Last updated 2025-07-15                                                     ##
+# Last updated 2025-12-03                                                     ##
 #                                                                             ##
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -14,6 +14,10 @@
 
 # Required Files (check that script is loading latest version):
 # data/seagrass_data.csv
+# data/MarineGEO_3M_Seagrass_Blades.csv
+# data/MarineGEO_3M_Seagrass_Cover.csv
+# data/MarineGEO_3M_Seagrass_Density.csv
+# data/MarineGEO_3M_Seagrass_Shoots.csv
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # TABLE OF CONTENTS                                                         ####
@@ -208,10 +212,11 @@ bath_mask <- mask(bath_mask, mudbay)
 
 # correct depth for NAVD88/MLLW offset
 # Alaska Tidal Datum Portal. 
-# Alaska Tidal Datum Reference Table. 
+# Alaska Tidal Datum Reference Table.
+# Seldovia NAVD88 0 m is 1.573 m above MLLW
 # Retrieved from 
 # https://dggs.alaska.gov/hazards/coastal/ak-tidal-datum-portal.html  
-bath_corr <- bath_mask - 1.573
+bath_corr <- bath_mask + 1.573
 bath_clamp <- clamp(bath_corr, lower = -6, upper = 3, values = FALSE)
 bath_clamp <- interpIDW(bath_clamp,
                         ROI,
@@ -317,14 +322,14 @@ seagrass_depths |>
                                 densityValue == "moderate" ~ 75,
                                 densityValue == "thick" ~ 100)) |> 
 ggplot() +
-  geom_jitter(aes(x = depth, y = densityNum, color = month(date, label = TRUE), shape = source),
+  geom_jitter(aes(x = depth, y = densityNum, color = month(date, label = TRUE)), #shape = source),
               width = 0, height = 5, size = 4, alpha = 0.75) +
   theme_bw() +
   scale_color_viridis_d() +
   labs(x = "Depth (m)", 
        y = "Maximum Cover (%)",
-       color = "Month",
-       shape = "GPS location") +
+       color = "Month") +
+       #shape = "GPS location") +
   geom_smooth(aes(x = depth, y = densityNum),
               method = "lm", se = FALSE) +
   scale_y_continuous(limits = c(-5, 105))
@@ -353,7 +358,9 @@ seagrass_depths |>
        shape = "GPS location") +
   theme_bw()
 
-# reproductives by cover
+
+# INCLUDE IN POSTER  
+  # reproductives by cover
 seagrass_raw |>
   filter(densityID == 1) |>
   mutate(Reproductive = as.numeric(str_detect(notes, "reproductive"))) |>
@@ -375,9 +382,61 @@ seagrass_raw |>
   theme_bw()
   
  
+# INCLUDE IN POSTER
+# leaflet of all surveys
+plet(new_interp, "QualitativeCover",col=viridis(6, option = "magma",
+                                                begin = .6, end = 1)) 
+
+# dryweights
+weights <- read_csv("data/MarineGEO_3M_Seagrass_Shoots.csv")
+calc_weights <- weights |>
+  mutate(epibionts = epibiont_drymass - epibiont_empty) |>
+  mutate(blades = blade_drymass - blade_empty) |>
+  select(epibionts, blades) |>
+  pivot_longer(epibionts:blades, names_to = "category", values_to = "mass (g)") |>
+  mutate(`mass (g)` = case_when(`mass (g)` < 0 ~ 0,
+                                .default = `mass (g)`))
+
+# INCLUDE IN POSTER
+# dryweights
+ggplot(calc_weights, aes(x = category, y = `mass (g)`, fill = category)) +
+  labs(y = "dry mass (g)") +
+  geom_boxplot() +
+  theme_bw() +
+  scale_fill_viridis(discrete = TRUE,
+                     begin = 0.9, 
+                     end = 0.4)
+
+# 
 
 
+# Check depth accuracy of mud bay
+# 2. Define the classification breaks and new values
+# The matrix should have 3 columns: from value, to value, new value
+# This example creates three bins: 0-30, 30-70, 70-100
+reclass_matrix <- matrix(
+  c(-4, -3, 1,
+    -3, -2, 2,
+    -2, -1, 3,
+    -1, 0, 4,
+    0, 1, 5,
+    1, 2, 6),
+  ncol = 3,
+  byrow = TRUE
+)
 
+# 3. Apply the classification
+r_binned <- classify(bath_clamp, reclass_matrix, include.lowest=TRUE)
+# include.lowest=TRUE ensures the lowest value (0) is included in the first bin.
+
+# 4. View results (optional)
+plot(r_binned)
+freq(r_binned) # Check the frequency of each bin
+
+# PROBLEM : the bathymetry product seems to have a break at 0 m. This may
+# be a result of the way the actual bathymetry product is stitched together.
+# The subtidal portions may not have been corrected for the diff between 
+# NAVD88 and MLLW in Homer/Seldovia. 
 
 
 
