@@ -516,11 +516,11 @@ date,transect,quadrat,timeBegin,timeEnd,lat,lon,shoots,shootID,shootLength,shoot
 8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,7,thick,sand-mud,Whippo,senescent grass present
 8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,8,thick,sand-mud,Whippo,senescent grass present
 8/26/2025,MB09,1,1010,1140,59.62303,-151.457756,0,NA,NA,NA,9,thick,sand-mud,Whippo,senescent grass present
-8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,1,91,0.5,1,thick,mud,Whippo,reproductives present
-8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,2,38,0.25,2,thick,mud,Whippo,reproductives present
-8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,3,87,0.5,3,moderate,mud,Whippo,reproductives present
-8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,4,88,0.4,4,thick,mud,Whippo,reproductives present
-8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,5,85,0.4,5,thin,mud,Whippo,reproductives present
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,1,91,0.5,1,thick,mud,Whippo,reproductives present | REVIEW DENSITY ENTRIES
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,2,38,0.25,2,thick,mud,Whippo,reproductives present | REVIEW DENSITY ENTRIES
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,3,87,0.5,3,moderate,mud,Whippo,reproductives present | REVIEW DENSITY ENTRIES
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,4,88,0.4,4,thick,mud,Whippo,reproductives present | REVIEW DENSITY ENTRIES
+8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,5,85,0.4,5,thin,mud,Whippo,reproductives present | REVIEW DENSITY ENTRIES
 8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,NA,NA,NA,6,sparse,mud,Whippo,reproductives present
 8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,NA,NA,NA,7,trace,mud,Whippo,reproductives present
 8/26/2025,MB09,2,1010,1140,59.627974,-151.4521,69,NA,NA,NA,8,sparse,mud,Whippo,reproductives present
@@ -553,3 +553,16 @@ date,transect,quadrat,timeBegin,timeEnd,lat,lon,shoots,shootID,shootLength,shoot
 9/22/2025,MBX,NA,900,930,59.632449,-151.471283,NA,NA,NA,NA,1,thin,silty-mud,Whippo | Jones | Fliearman,
 9/22/2025,MBX,NA,900,930,59.632576,-151.472692,NA,NA,NA,NA,1,moderate,silty-mud,Whippo | Jones | Fliearman,lots of senescent seagrass
 9/22/2025,MBX,NA,900,930,59.632401,-151.46844,NA,NA,NA,NA,1,thick,silty-mud,Whippo | Jones | Fliearman,patchy
+2/20/2026,MBX,1,830,910,59.60935,-151.43336,54,1,11,0.25,1,thin,sandy-cobble,Whippo | Griffin,shoots under slush
+2/20/2026,MBX,1,830,910,59.60935,-151.43336,54,2,12,0.25,1,thin,sandy-cobble,Whippo | Griffin,shoots under slush
+2/20/2026,MBX,1,830,910,59.60935,-151.43336,54,3,13,0.25,1,thin,sandy-cobble,Whippo | Griffin,shoots under slush
+2/20/2026,MBX,1,830,910,59.60935,-151.43336,54,4,11,0.25,1,thin,sandy-cobble,Whippo | Griffin,shoots under slush
+2/20/2026,MBX,1,830,910,59.60935,-151.43336,54,5,12,0.25,1,thin,sandy-cobble,Whippo | Griffin,shoots under slush
+2/20/2026,MBX,1,830,910,59.60949,-151.4323,NA,NA,NA,NA,1,sparse,sandy-cobble,Whippo | Griffin,
+2/20/2026,MBX,1,830,910,59.6097,-151.43138,NA,NA,NA,NA,1,thin,sandy-cobble,Whippo | Griffin,
+2/20/2026,MBX,1,830,910,59.60976,-151.43048,NA,NA,NA,NA,1,none,sandy-cobble,Whippo | Griffin,
+2/20/2026,MBX,1,830,910,59.61006,-151.43045,NA,NA,NA,NA,1,sparse,sandy-cobble,Whippo | Griffin,
+2/20/2026,MBX,1,830,910,59.61024,-151.43135,NA,NA,NA,NA,1,thin,sandy-cobble,Whippo | Griffin,blades longer
+2/20/2026,MBX,1,830,910,59.61036,-151.43375,NA,NA,NA,NA,1,thin,sandy-cobble,Whippo | Griffin,blades longer
+2/20/2026,MBX,1,830,910,59.60963,-151.43436,NA,NA,NA,NA,1,none,sandy-cobble,Whippo | Griffin,
+2/20/2026,MBX,1,830,910,59.60969,-151.43365,NA,NA,NA,NA,1,sparse,sandy-cobble,Whippo | Griffin,
