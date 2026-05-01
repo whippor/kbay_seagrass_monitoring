@@ -544,15 +544,17 @@ writeVector(interp_vect, "C:/Users/Ross.Whippo/Desktop/seagrass.kml", filetype =
 
 
 
+# plot of plots Colby did
+seagrass_feb <- seagrass_shape |>
+  mutate(status = case_when(date > "2026-01-01" ~ 1,
+                            date < "2026-01-01" ~ 2))
+
+plet(seagrass_feb, "status", col=viridis(2, option = "viridis",
+                                                begin = .95, end = .7),
+     cex = 4)
 
 
-
-
-
-
-
-
-
+#
 
 
 
