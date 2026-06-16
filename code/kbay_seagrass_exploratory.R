@@ -184,7 +184,8 @@ new_interp <- interp_vect |>
   rename(QualitativeCover = densityValue)
   
 plet(new_interp, "QualitativeCover",col=viridis(6, option = "mako",
-                                             begin = .6, end = 1)) 
+                                             begin = .6, end = 1),
+     cex = 6) 
 
 interp_df |>
   ggplot() +
