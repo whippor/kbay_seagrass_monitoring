@@ -217,7 +217,7 @@ bath_mask <- mask(bath_mask, mudbay)
 # Seldovia NAVD88 0 m is 1.573 m above MLLW
 # Retrieved from 
 # https://dggs.alaska.gov/hazards/coastal/ak-tidal-datum-portal.html  
-bath_corr <- bath_mask + 1.573
+bath_corr <- bath_mask - 1.546
 bath_clamp <- clamp(bath_corr, lower = -6, upper = 3, values = FALSE)
 bath_clamp <- interpIDW(bath_clamp,
                         ROI,
@@ -252,7 +252,9 @@ interp_dense <- interpIDW(bath_clamp,
                           smooth = 100)
 interp_mask <- mask(interp_dense, bath_clamp)
 
-
+plet(interp_dense)
+dense_mask <- mask(interp_dense, bath_clamp, inverse = TRUE)
+plet(dense_mask)
 plet(interp_mask)
 plet(interp_vect)
 
