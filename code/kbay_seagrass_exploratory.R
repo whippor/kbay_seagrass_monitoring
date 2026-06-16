@@ -156,7 +156,7 @@ interp_df <- interp_df |>
   mutate(lat = y, lon = x) |>
   select(-x, -y)
 
-write_csv(interp_df, "data/seagrass_density.csv")
+# write_csv(interp_df, "data/seagrass_density.csv")
 
 # import west mud bay meadow polygon
 meadow_lines <- vect("data/Seagrasspathpolygon.kml")
@@ -164,7 +164,7 @@ meadow_poly <- as.polygons(meadow_lines)
 meadow_poly <- project(meadow_poly, interpcrs)
 expanse(meadow_poly)
 
-plot(interp_dense)
+plot(interp_df)
 plot(meadow_poly, add = TRUE)
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # VISUALIZE PLOTS                                                           ####
