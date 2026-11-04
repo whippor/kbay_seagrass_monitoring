@@ -103,15 +103,15 @@ Standardized variable specifications, units of measurement, data validation rule
 
 ### Density Scale (`densityValue`)
 
-Estimated over \~3 m radius from position of observer. Extrapolated densities are derived from quadrat shoot counts within the area described.
+Estimated over \~3 m radius from position of observer. Extrapolated densities are derived from quadrat shoot counts of 0.5 m^2^ within the area described.
 
 | Value | Ordinal Rank | Meadow Cover Definition | Field Density Extrapolated from Associated Quadrat Shoot Counts |
 |:-----------------|:-----------------:|:-----------------|:-----------------|
 | **none** | 0 | Absence of eelgrass; bare substrate or macroalgae (*Ulva*) only | 0 shoots recorded, n = 59 |
 | **trace** | 1 | Very rare, isolated single shoots or blade fragments (≤ 1% cover) | mean = 249, sd = 545, n = 40 |
 | **sparse** | 2 | Scattered, low-density shoot clusters (\~2% – 10% cover) | mean = 758, sd = 1045, n = 24 |
-| **thin** | 3 | Light canopy coverage, open meadow patches (\~11% – 25% cover) | mean = 3684, sd = 1772, n = 20 |
-| **moderate** | 4 | Well-established eelgrass meadow, medium density (\~26% – 75% cover) | mean = 5676, sd = 3096, n = 30 |
+| **thin** | 3 | Light canopy coverage, open meadow patches (\~11% – 25% cover) | mean = 3950, sd = 2114, n = 21 |
+| **moderate** | 4 | Well-established eelgrass meadow, medium density (\~26% – 75% cover) | mean = 5756, sd = 3011, n = 32 |
 | **thick** | 5 | Dense, continuous eelgrass carpet (\> 75% cover) | mean = 11574, sd = 6898, n = 38 |
 
 ------------------------------------------------------------------------
@@ -124,7 +124,7 @@ Estimated over \~3 m radius from position of observer. Extrapolated densities ar
 | `nd` | `shootID`, `shootLength`, `shootWidth` | **No Data / Not Determined**: Shoots were present within the quadrat, but individual blade dimensions were not measured. |
 | `0` | `shoots` | **True Biological Zero**: Quadrat was thoroughly inspected and confirmed to contain 0 eelgrass shoots. |
 | `none` | `densityValue` | Confirmed absence of eelgrass in subquadrat partition (substrate bare or *Ulva* macroalgae only). |
-| `MBX` , `SLX` , `SBX` , `SAX` | `transect` | Exploratory reconnaissance waypoint sampled outside the established  transect grid. |
+| `MBX` , `SLX` , `SBX` , `SAX` | `transect` | Exploratory reconnaissance waypoint sampled outside the established transect grid. |
 | `1`–`17` | `densityID` | Partition grid cell index within the sampling frame used for spatial density mapping. |
 | `shootLength` | Morphometrics | Sheath meristem to leaf apex blade length measured in centimeters. |
 | `shootWidth` | Morphometrics | Mid-blade leaf width measured in centimeters. |

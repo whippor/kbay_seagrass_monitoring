@@ -146,6 +146,6 @@ interp_df <- interp_df |>
   mutate(lat = y, lon = x) |>
   select(-x, -y)
 
-write_csv(interp_df, "data/seagrass_density.csv")
+# write_csv(interp_df, "data/seagrass_density.csv")
 
 #### END OF SCRIPT ####
