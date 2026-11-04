@@ -65,10 +65,10 @@ Standardized variable specifications, units of measurement, data validation rule
 | Metadata Field | Value |
 |:-----------------------------------|:-----------------------------------|
 | **Study Context** | Intertidal eelgrass (*Zostera marina*) monitoring & shoot morphometrics |
-| **Geographic Scope** | Kachemak Bay, Alaska (Lat: 59.61°N–59.64°N, Lon: -151.49°W to -151.43°W) |
+| **Geographic Scope** | Kachemak Bay, Alaska (Lat: 59.43°N–59.66°N, Lon: -151.71°W to -151.42°W) |
 | **Temporal Span** | 2025-05-29 to 2026-10-16 |
-| **Total Records** | 1,483 rows |
-| **Unique Transects** | 35 transects |
+| **Total Records** | 1,612 rows |
+| **Unique Transects** | 36 transects |
 | **Target Species** | *Zostera marina* |
 | **Observers / Custodians** | Ross Whippo (NOAA-NCCOS-KBL) |
 | **Coordinate System** | WGS 84 (Decimal Degrees) |
@@ -79,22 +79,22 @@ Standardized variable specifications, units of measurement, data validation rule
 ## 2. Variable Specifications
 
 | Variable Name | Data Type | Unit / Format | Description | Allowable Values / Scale | Null / Missing Code | Example |
-|:-----------|:---------|:----------|:----------|:---------|:---------|:---------|
+|:----------|:----------|:----------|:----------|:----------|:----------|:----------|
 | `date` | Date | `m/d/YYYY` | Survey sampling date | Valid calendar dates (2025–2026) | None (Mandatory) | `5/29/2025` |
 | `transect` | Text (Categorical) | Alphanumeric Code | Transect line identifier across sampling sites | `MB01`–`MB32`, `MBX, SLX, SSX, SAX` (off-transect observations end with -X) | None (Mandatory) | `MB01` |
 | `quadrat` | Integer / Text | Station Index | Quadrat sampling station number along transect line | `1` – `15`, or `NA` for ad-hoc point observations | `NA` (non-transect ad-hoc points) | `1` |
 | `timeBegin` | Time / Integer | `HHMM` (Military) | Field survey start time at sampling station | `0000` – `2400` (Local Alaska Time AKST/AKDT) | `NA` | `0930` |
 | `timeEnd` | Time / Integer | `HHMM` (Military) | Field survey end time at sampling station | `0000` – `2400` (Local Alaska Time AKST/AKDT) | `NA` | `1030` |
-| `lat` | Decimal Number | Decimal Degrees (°N) | Latitude coordinate of quadrat station (WGS84 datum) | `59.600000` to `59.650000` | `NA` | `59.634715` |
-| `lon` | Decimal Number | Decimal Degrees (°W) | Longitude coordinate of quadrat station (WGS84 datum) | `-151.500000` to `-151.430000` | `NA` | `-151.491173` |
+| `lat` | Decimal Number | Decimal Degrees (°N) | Latitude coordinate of quadrat station (WGS84 datum) | `59.430000` to `59.660000` | `NA` | `59.634715` |
+| `lon` | Decimal Number | Decimal Degrees (°W) | Longitude coordinate of quadrat station (WGS84 datum) | `-151.710000` to `-151.420000` | `NA` | `-151.491173` |
 | `shoots` | Integer | Count (\# shoots) | Total vegetative eelgrass shoot count in quadrat | Integers $\ge 0$, or `NA` | `NA` (uncounted / trace) | `63` |
 | `shootID` | Integer / Text | Sequential Index | Identifier for individual measured shoot within quadrat | `1`, `2`, `3`, `4`, `5`, or `NA` / `nd` | `NA` (no shoot), `nd` (no data) | `1` |
 | `shootLength` | Decimal Number | Centimeters (cm) | Maximum sheath-to-tip leaf length of measured shoot | Real numbers $> 0$ | `NA` (no shoot), `nd` (no data) | `36` |
 | `shootWidth` | Decimal Number | Centimeters (cm) | Leaf blade width of measured seagrass shoot | Real numbers $> 0$ (typically `0.1` – `0.5` cm) | `NA` (not measured), `nd` (no data) | `0.3` |
 | `densityID` | Integer / Text | Partition Index | Subquadrat partition index for density estimation | `1` to `17`, or `NA` | `NA` (not partitioned) | `1` |
 | `densityValue` | Text (Categorical) | Qualitative Rank | Qualitative eelgrass density ranking in subquadrat | `none`, `trace`, `sparse`, `thin`, `moderate`, `thick` | `NA` (unrecorded) | `thick` |
-| `substrate` | Text (Categorical) | Qualitative Classification | Dominant benthic substrate sediment composition | `mud`, `sand-mud`, `gravel-sand`, `cobble`, `cobble-mud`, `cobble-sand`, `water-sand-mud` | `NA` (unrecorded) | `mud` |
-| `collector` | Text | Observer Names | Field scientific personnel conducting observation | Ross Whippo, Martin, Harding, Ruebling (individual or pipe-delimited) | `NA` | `Whippo` |
+| `substrate` | Text (Categorical) | Qualitative Classification | Dominant benthic substrate sediment composition | `mud`, `sand-mud`, `gravel`, `gravel-sand`, `cobble`, `cobble-mud`, `cobble-sand`, `water-sand-mud` | `NA` (unrecorded) | `mud` |
+| `collector` | Text | Observer Names | Field scientific personnel conducting observation | Unrestricted descriptive text | `NA` | `Whippo` |
 | `notes` | Text | Free Text Remarks | Field observations,reproductive status, environmental notes, tidal limits | Unrestricted descriptive text | Empty cell (No remarks) | `reproductive eelgrass Q9` |
 
 ------------------------------------------------------------------------
@@ -106,21 +106,13 @@ Standardized variable specifications, units of measurement, data validation rule
 Estimated over \~3 m radius from position of observer. Extrapolated densities are derived from quadrat shoot counts within the area described.
 
 | Value | Ordinal Rank | Meadow Cover Definition | Field Density Extrapolated from Associated Quadrat Shoot Counts |
-|:----------------|:------------------:|:----------------|:----------------|
+|:-----------------|:-----------------:|:-----------------|:-----------------|
 | **none** | 0 | Absence of eelgrass; bare substrate or macroalgae (*Ulva*) only | 0 shoots recorded, n = 59 |
 | **trace** | 1 | Very rare, isolated single shoots or blade fragments (≤ 1% cover) | mean = 249, sd = 545, n = 40 |
 | **sparse** | 2 | Scattered, low-density shoot clusters (\~2% – 10% cover) | mean = 758, sd = 1045, n = 24 |
-| **thin** | 3 | Light canopy coverage, open meadow patches (\~11% – 25% cover) | mean = 3693, sd = 1820, n = 19 |
-| **moderate** | 4 | Well-established eelgrass meadow, medium density (\~26% – 75% cover) | mean = 5560, sd = 3084, n = 29 |
-| **thick** | 5 | Dense, continuous eelgrass carpet (\> 75% cover) | mean = 11224, sd = 6643, n = 37 |
-
-### Substrate Classes (`substrate`)
-
-| Class | Sediment Type | Composition & Grain Size Characteristics | Field Habitat Context |
-|:-----------------|:-----------------|:-----------------|:-----------------|
-| **mud** | Fine Silt / Clay | Soft cohesive mud, high silt content, deep footprint penetration | Protected tidal flats, optimal *Zostera marina* rooting bed |
-| **sand-mud / gravel-sand** | Mixed Sand / Gravel | Firm sand with silt matrix, or gravel clasts embedded in sand | Transitional intertidal flats, moderate wave/current exposure |
-| **cobble / cobble-mud** | Coarse Clasts | Cobbles (64–256 mm) with mixed sand or mud matrix, tidepools | Rocky beach margins; transects often tide-limited or truncated |
+| **thin** | 3 | Light canopy coverage, open meadow patches (\~11% – 25% cover) | mean = 3684, sd = 1772, n = 20 |
+| **moderate** | 4 | Well-established eelgrass meadow, medium density (\~26% – 75% cover) | mean = 5676, sd = 3096, n = 30 |
+| **thick** | 5 | Dense, continuous eelgrass carpet (\> 75% cover) | mean = 11574, sd = 6898, n = 38 |
 
 ------------------------------------------------------------------------
 
@@ -132,7 +124,7 @@ Estimated over \~3 m radius from position of observer. Extrapolated densities ar
 | `nd` | `shootID`, `shootLength`, `shootWidth` | **No Data / Not Determined**: Shoots were present within the quadrat, but individual blade dimensions were not measured. |
 | `0` | `shoots` | **True Biological Zero**: Quadrat was thoroughly inspected and confirmed to contain 0 eelgrass shoots. |
 | `none` | `densityValue` | Confirmed absence of eelgrass in subquadrat partition (substrate bare or *Ulva* macroalgae only). |
-| `MBX` | `transect` | Exploratory reconnaissance waypoint sampled outside the established permanent transect grid. |
+| `MBX` , `SLX` , `SBX` , `SAX` | `transect` | Exploratory reconnaissance waypoint sampled outside the established  transect grid. |
 | `1`–`17` | `densityID` | Partition grid cell index within the sampling frame used for spatial density mapping. |
 | `shootLength` | Morphometrics | Sheath meristem to leaf apex blade length measured in centimeters. |
 | `shootWidth` | Morphometrics | Mid-blade leaf width measured in centimeters. |

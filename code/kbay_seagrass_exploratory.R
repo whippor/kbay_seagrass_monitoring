@@ -682,9 +682,11 @@ test <- seagrass_raw |>
   filter(densityID == 1) |>
   filter(densityValue == "none")
 
+unique(seagrass_raw$substrate)
 
-
-
-
-
-
+min(seagrass_raw$lat)
+max(seagrass_raw$lat)
+min(seagrass_raw$lon)
+max(seagrass_raw$lon)
+max(seagrass_raw$date)
+unique(seagrass_raw$transect)
