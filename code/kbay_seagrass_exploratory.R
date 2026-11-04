@@ -1,11 +1,11 @@
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#                                                                             ##
-# KBay Seagrass Exploratory                                                   ##
-# Script created 2025-06-04                                                   ##
-# Data source: NOAA-NCCOS-KBL                                                 ##
-# R code prepared by Ross Whippo                                              ##
-# Last updated 2026-10-20                                                    ##
-#                                                                             ##
+#                                                                             
+# KBay Seagrass Exploratory                                                   
+# Script created 2025-06-04                                                   
+# Data source: NOAA-NCCOS-KBL                                                 
+# R code prepared by Ross Whippo                                              
+# Last updated 2026-11-03                                                   
+#                                                                             
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # SUMMARY:
@@ -20,16 +20,18 @@
 # data/MarineGEO_3M_Seagrass_Shoots.csv
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# TABLE OF CONTENTS                                                         ####
-#                                                                              +
-# LOAD PACKAGES                                                                +
-# READ IN AND PREPARE DATA                                                     +
-# MANIPULATE DATA                                                              +
-#                                                                              +
+# TABLE OF CONTENTS ####
+#                                                                              
+# LOAD PACKAGES   
+# GPS INTERPOLATION FUNCTION
+# READ IN AND PREPARE DATA                                                     
+# VISUALIZE PLOTS
+# INTERPOLATE DENSITY
+#                                                                              
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# LOAD PACKAGES                                                             ####
+# LOAD PACKAGES ####
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 library(tidyverse)
@@ -41,7 +43,7 @@ library(basemaps)
 library(tidyterra)
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# GPS INTERPOLATION FUNCTION                                                ####
+# GPS INTERPOLATION FUNCTION ####
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -112,7 +114,7 @@ interpolate_quadrats_with_measured <- function(df_group) {
 }
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# READ IN AND PREPARE DATA                                                  ####
+# READ IN AND PREPARE DATA ####
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # read in seagrass data table
@@ -166,8 +168,9 @@ expanse(meadow_poly)
 
 plot(interp_df)
 plot(meadow_poly, add = TRUE)
+
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# VISUALIZE PLOTS                                                           ####
+# VISUALIZE PLOTS ####
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # plot, no baselayer
@@ -193,7 +196,7 @@ interp_df |>
   scale_color_brewer(direction = -1, palette = 2) 
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# INTERPOLATE DENSITY                                                       ####
+# INTERPOLATE DENSITY ####
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # read in bathymetry layer
@@ -617,3 +620,71 @@ mandelbrot_vectorized <- function(xmin=-2, xmax=2, nx=500,
   
 }
 mandelbrot_vectorized(n = 2000)
+
+
+
+
+
+
+str(seagrass_raw)
+head(seagrass_raw)
+glimpse(seagrass_raw)
+
+
+
+
+
+
+
+
+seagrass_raw |>
+  filter(densityID == 1) |>
+  mutate(Reproductive = as.numeric(str_detect(notes, "reproductive"))) |>
+  mutate(densityNum = case_when(densityValue == "none" ~ 0,
+                                densityValue == "trace" ~ 1,
+                                densityValue == "sparse" ~ 10,
+                                densityValue == "thin" ~ 25,
+                                densityValue == "moderate" ~ 75,
+                                densityValue == "thick" ~ 100)) 
+
+
+seldoviaSeagrass2 <- selvdoviaSeagrass |>
+  filter(transect %in% c("SAX", "SLX"))
+
+
+
+# what is the range and mean of qualitative cover for measured quadrats?
+
+seagrass_raw |>
+  filter(densityID == 1) |>
+  filter(shoots > -1) |>
+  mutate(extrap_shoots = shoots*113) |>
+  ggplot(aes(x = densityValue, y = extrap_shoots)) +
+  geom_boxplot()
+
+seagrass_raw |>
+  filter(densityID == 1) |>
+  filter(shoots > -1) |>
+  mutate(extrap_shoots = shoots*113) |>
+  group_by(densityValue) |>
+  summarise(
+    mean_value = mean(extrap_shoots, na.rm = TRUE),
+    sd_val = sd(extrap_shoots, na.rm = TRUE),
+    n = n(),
+    .groups = "drop"
+  )
+
+# 0.5*0.5 = 0.25
+# pi*(3^2) = 28.27433
+# 28.27433/0.25 = 113.0973
+
+test <- seagrass_raw |>
+  filter(densityID == 1) |>
+  filter(densityValue == "none")
+
+
+
+
+
+
+
